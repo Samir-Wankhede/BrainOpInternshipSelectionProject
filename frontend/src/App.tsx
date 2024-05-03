@@ -19,7 +19,7 @@ function App() {
     useEffect(() => {
       setTimeout(() => setLoading(false), 1000);
     }, []);
-
+    //Setting Up Routes and Loader
     return loading ? 
     (
       <div className="flex h-screen items-center justify-center bg-[#111]">
