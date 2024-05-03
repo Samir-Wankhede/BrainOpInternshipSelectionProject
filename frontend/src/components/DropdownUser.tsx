@@ -13,7 +13,7 @@ const DropdownUser = () => {
   const trigger = useRef<any>(null);
   const dropdown = useRef<any>(null);
 
-  // close on click outside
+  // fetch profile picture if present
   useEffect(() => {
     let APIcall = true;
     const fetchdata = async () => {
@@ -38,6 +38,7 @@ const DropdownUser = () => {
     }
   },[]);
 
+  // close on click outside
   useEffect(()=>{
     const clickHandler = ({ target }: MouseEvent) => {
       if (!dropdown.current) return;
