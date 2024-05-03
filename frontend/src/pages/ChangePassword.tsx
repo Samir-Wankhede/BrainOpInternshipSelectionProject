@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useChangePassword } from '../hooks/useChangePassword'
 
 export default function ChangePassword() {
+    //Validation and Sanitization and prevention from XSS
     const oneUpperCase = new RegExp(/^(?=.*?[A-Z])^/)
     const oneLowerCase = new RegExp(/^(?=.*?[a-z])^/)
     const oneDigit = new RegExp(/^(?=.*?[0-9])^/)
@@ -76,6 +77,7 @@ export default function ChangePassword() {
     const {changepassword, isLoading, error, isChanged} = useChangePassword()
     const SubmitForm = async (e: SchemaProps) => {
         // e.preventDefault();
+        //call functionality
         const info = watch()
         await changepassword(info.oldpassword,info.newpassword,info.confirmed_newpassword)
        
