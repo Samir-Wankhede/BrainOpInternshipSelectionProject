@@ -12,10 +12,11 @@ export default function Posts() {
     const [pageSize, setPageSize] = useState(12)
     const [loading, setLoading] = useState(true);
     const [notend, setNotEnd] = useState(false);
+  
 
+  //Check if Last element is in view
   const observer = useRef<any>()
   const lastPostRef = useCallback((node: any) => {
-
     if (loading) return
     if (observer.current) {observer.current.disconnect()}
     observer.current = new IntersectionObserver(entries => {
