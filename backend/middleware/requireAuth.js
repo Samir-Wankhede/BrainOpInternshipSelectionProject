@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { db } from "../server.js";
 
 const requireAuth = async (req,res,next) => {
-
+    //Get JWT token stored in cookies
     const token = req.cookies.jwt
 
     try{
