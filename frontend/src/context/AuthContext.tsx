@@ -20,6 +20,7 @@ export const AuthContextProvider = ({children}:any) => {
     })
 
     useEffect(()=>{
+        //Store Vald user data in local storage
         const item:any = window.localStorage.getItem("user")
         const user = JSON.parse(item)
         if(user){
